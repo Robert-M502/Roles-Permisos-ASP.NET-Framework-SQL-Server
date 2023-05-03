@@ -1,0 +1,90 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MP.master.cs" Inherits="Permisos_y_Roles_de_Usuarios.Pages.MP" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>
+        <asp:ContentPlaceHolder ID="title" runat="server"></asp:ContentPlaceHolder>
+    </title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header>
+            <nav class="navbar" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="https://bulma.io">
+                        <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+                    </a>
+
+                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+
+                <div id="navbarBasicExample" class="navbar-menu">
+                    <div class="navbar-start">
+                        <a class="navbar-item">Inicio
+                        </a>
+
+                        <a class="navbar-item">Reportes
+                        </a>
+
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a class="navbar-link">Opciones
+                            </a>
+
+                            <div class="navbar-dropdown">
+                                <a class="navbar-item">Usuarios
+                                </a>
+                                <a class="navbar-item">Roles
+                                </a>
+                                <a class="navbar-item">Permisos
+                                </a>
+                                <hr class="navbar-divider">
+                                <a class="navbar-item">Otros
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="navbar-end has-text-centered navbar-brand">
+                        
+                        <div runat="server" id="divUser" class="navbar-item has-dropdown is-hoverable">
+                            <asp:Label CssClass="navbar-link" runat="server" ID="lblUsuario"></asp:Label>
+                                <div class="navbar-dropdown">
+                                    <asp:Button text="Salir" runat="server" CssClass="button is-white" OnClick="btnSalir_Click"/>
+                                </div>
+                        </div>
+
+                        <div class="navbar-item" runat="server" id="divbuttons">
+                            <div class="buttons">
+                                <asp:Button text="Registrarse" runat="server" CssClass="button is-primary" OnClick="btnRegistrarse_Click"/>
+                                <asp:Button text="Iniciar Sesión" runat="server" CssClass="button is-light" OnClick="btnIniciarSesion_Click"/>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div>
+            <asp:ContentPlaceHolder ID="body" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
